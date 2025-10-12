@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acesso Cliente - Costur Confecções</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f1f5fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .logo img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .logo h1 {
+      color: #007bff;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      width: 100%;
+      transition: 0.3s;
+      text-align: center;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    }
+
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #005fcc;
+    }
+
+    .footer-text {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="Sem Título-1 (1).png" alt="Logo Costur Confecções">
+      <h1>Costur Confecções</h1>
+    </div>
+
+    <h2>Área do Cliente</h2>
+
+    <form id="loginForm">
+      <input type="text" id="clientId" placeholder="ID do Cliente" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p class="footer-text">Acesso de clientes cadastrados</p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const id = document.getElementById("clientId").value.trim();
+
+      // Lista de IDs e links personalizados
+      const clientes = {
+        "090909": "https://www.costurconfeccoes.com.br",
+        "CLIENTE01": "https://www.exemplo1.com.br",
+        "cliente@2024": "https://www.exemplo2.com.br",
+        "A#B#C#": "https://www.exemplo3.com.br",
+        "123abc!": "https://www.exemplo4.com.br"
+      };
+
+      // Verifica se o ID existe
+      if (clientes[id]) {
+        window.location.href = clientes[id];
+      } else {
+        alert("ID inválido. Verifique e tente novamente.");
+      }
+    });
+  </script>
+</body>
+</html>
